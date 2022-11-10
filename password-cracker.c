@@ -65,19 +65,7 @@ int crack_single_password(uint8_t* input_hash, char* output) {
   return 0;
 }
 
-
-/**
- * This struct is the root of the data structure that will hold users and hashed passwords.
- * This could be any type of data structure you choose: list, array, tree, hash table, etc.
- * Implement this data structure for part B of the lab.
- */
-
 // The size of the hash table
-/**
- * 512 is the smallest power of 2 greater than 300.
- * The power of 2 is used to use bitwise operators for modulo calculation because bitwise operators are generally faster than arithmetic operators.
- * Not to waste a lot of space, the smallest power of 2 greater than 300 is chosen.
- */
 #define TABLE_SIZE 512
 // The data type for the hash for the hash table
 typedef uint64_t hash_type;
@@ -130,7 +118,6 @@ hash_type hash_function(uint8_t* key) {
 
 /**
  * Initialize a password set.
- * Complete this implementation for part B of the lab.
  *
  * \param passwords  A pointer to allocated memory that will hold a password set
  */
@@ -151,15 +138,11 @@ void init_password_set(password_set_t* passwords) {
 
 /**
  * Add a password to a password set
- * Complete this implementation for part B of the lab.
  *
  * \param passwords   A pointer to a password set initialized with the function above.
- * \param username    The name of the user being added. The memory that holds this string's
- *                    characters will be reused, so if you keep a copy you must duplicate the
- *                    string. I recommend calling strdup().
+ * \param username    The name of the user being added.
  * \param password_hash   An array of MD5_DIGEST_LENGTH bytes that holds the hash of this user's
- *                        password. The memory that holds this array will be reused, so you must
- *                        make a copy of this value if you retain it in your data structure.
+ *                        password.
  */
 void add_password(password_set_t* passwords, char* username, uint8_t* password_hash) {
   // Create a new password set node
@@ -253,9 +236,7 @@ void* thread_fn(void* arg) {
 }
 
 /**
- * Crack all of the passwords in a set of passwords. The function should print the username
- * and cracked password for each user listed in passwords, separated by a space character.
- * Complete this implementation for part B of the lab.
+ * Crack all of the passwords in a set of passwords. 
  *
  * \returns The number of passwords cracked in the list
  */
