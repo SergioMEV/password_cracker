@@ -18,7 +18,7 @@
 
 /**
  * Find a six character lower-case alphabetic password that hashes
- * to the given hash value. Complete this function for part A of the lab.
+ * to the given hash value.
  *
  * \param input_hash  An array of MD5_DIGEST_LENGTH bytes that holds the hash of a password
  * \param output      A pointer to memory with space for a six character password + '\0'
